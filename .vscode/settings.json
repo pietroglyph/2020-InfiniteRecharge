@@ -1,5 +1,8 @@
 {
+  "editor.formatOnSave": true,
   "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.settings.url": ".vscode/spartronics-formatter.xml",
+  "java.format.settings.profile": "Spartronics",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -8,6 +11,7 @@
     "**/.DS_Store": true,
     "bin/": true,
     "**/.classpath": true,
+    "**/.github": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
