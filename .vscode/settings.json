@@ -1,6 +1,6 @@
 {
-  "editor.formatOnSave": true,
   "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.enabled": true,
   "java.format.settings.url": ".vscode/spartronics-formatter.xml",
   "java.format.settings.profile": "Spartronics",
   "files.exclude": {
