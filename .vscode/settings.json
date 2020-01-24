@@ -1,8 +1,8 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.format.enabled": true,
-  "java.format.settings.url": ".vscode/spartronics-formatter.xml",
-  "java.format.settings.profile": "Spartronics",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -13,7 +13,6 @@
     "**/.classpath": true,
     "**/.github": true,
     "**/.project": true,
-    "**/.settings": true,
     "**/.factorypath": true
   }
 }
