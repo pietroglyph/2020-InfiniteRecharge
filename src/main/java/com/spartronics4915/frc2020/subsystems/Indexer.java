@@ -7,7 +7,7 @@ public class Indexer extends SpartronicsSubsystem {
     // private SpartronicsMax mSpinner;
 
     public Indexer() {
-        
+
     }
 
     // Outline your API here by creating specific methods.
@@ -32,7 +32,7 @@ public class Indexer extends SpartronicsSubsystem {
     }
 
     public void liftUp() {
-        
+
     }
 
     public void liftDown() {
@@ -42,6 +42,6 @@ public class Indexer extends SpartronicsSubsystem {
     // The exception to this is a general-functionality stop() method.
 
     public void stop() {
-        
+
     }
 }

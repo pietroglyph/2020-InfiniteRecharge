@@ -7,7 +7,7 @@ public class Intake extends SpartronicsSubsystem {
     public Intake() {
 
     }
-    
+
     public void mechvecintake() {
 
     }
@@ -33,6 +33,6 @@ public class Intake extends SpartronicsSubsystem {
     }
 
     public void stop() {
-        
+
     }
 }

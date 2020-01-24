@@ -9,12 +9,12 @@ public final class Constants {
         public static final double kWinchSpeed = 1.0;
         public static final boolean kStalled = true;
     }
-    
+
     public static final class Indexer {
         public static final int kSpinnerId = -1;
         public static final int kLiftId = -1;
         public static final int kProxSensorId = -1;
-    }   
+    }
 
     public static final class Launcher {
         public static final int kFlywheelMasterID = -1;
@@ -31,10 +31,8 @@ public final class Constants {
     public static final class PanelRotator {
         public static final int kBeamSensorUpID = -1;
         public static final int kBeamSensorDownID = -1;
-
         public static final int kExtendMotorID = -1;
         public static final int kSpinMotorID = -1;
-
         public static final double kExtendMotorSpeed = 0.5;
         public static final double kSpinMotorSpeed = 0.5;
     }

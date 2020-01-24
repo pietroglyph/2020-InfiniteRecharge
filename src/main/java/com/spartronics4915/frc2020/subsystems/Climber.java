@@ -52,9 +52,8 @@ public class Climber extends SpartronicsSubsystem {
     public double getWinchVoltage() {
         return mClimberNEO.getBusVoltage();
     }
-    
+
     public boolean isStalled() {
         return false;
     }
 }
-
