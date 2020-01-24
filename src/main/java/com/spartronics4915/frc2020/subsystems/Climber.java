@@ -1,9 +1,3 @@
-/**
- * This subsystem has two motors. A NEO using a Spark, while the other is a 775 PRO using a Talon.
- * The NEO motor winches the climber and the 775 PRO extends the climber
- * The four methods used are extend(), winch(), reverse(), and stop()
- */
-
 package com.spartronics4915.frc2020.subsystems;
 
 import com.spartronics4915.frc2020.Constants;
@@ -14,7 +8,13 @@ import com.ctre.phoenix.motorcontrol.TalonSRXFeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.spartronics4915.lib.hardware.motors.SpartronicsMax;
 
+/**
+ * This subsystem has two motors. A NEO using a Spark, while the other is a 775 PRO using a Talon.
+ * The NEO motor winches the climber and the 775 PRO extends the climber
+ * The four methods used are extend(), winch(), reverseExtend(), and stop()
+ */
 public class Climber extends SpartronicsSubsystem {
 
     private static TalonSRX mClimber775Pro;
@@ -26,24 +26,35 @@ public class Climber extends SpartronicsSubsystem {
         mClimberNEO = new CANSparkMax(Constants.Climber.kWinchMotorId, MotorType.kBrushless);
     }
 
-    public static void extend() {
+    public void extend() {
+        mClimber775Pro.set(ControlMode.PercentOutput, Constants.Climber.kExtendSpeed);
+        mClimberNEO.set(0.0);
+    }
+
+    public void winch(boolean stalled) {
+        mClimber775Pro.set(ControlMode.PercentOutput, 0.0);
+        if (stalled)
+            mClimberNEO.set(Constants.Climber.kWinchSpeed);
+        else
+            mClimberNEO.set(-Constants.Climber.kWinchSpeed);
+    }
+
+    public void retract() {
+        mClimber775Pro.set(ControlMode.PercentOutput, -Constants.Climber.kExtendSpeed);
+        mClimberNEO.set(0.0);
+    }
+
+    public void stop() {
         mClimber775Pro.set(ControlMode.PercentOutput, 0.0);
         mClimberNEO.set(0.0);
     }
 
-    public static void winch() {
-        mClimber775Pro.set(ControlMode.PercentOutput, 0.0);
-        mClimberNEO.set(0.0);
+    public double getWinchVoltage() {
+        return mClimberNEO.getBusVoltage();
     }
-
-    public static void reverse() {
-        mClimber775Pro.set(ControlMode.PercentOutput, 0.0);
-        mClimberNEO.set(0.0);
+    
+    public boolean isStalled() {
+        return false;
     }
-
-    public static void stop() {
-        mClimber775Pro.set(ControlMode.PercentOutput, 0.0);
-        mClimberNEO.set(0.0);
-    }
-
 }
+
