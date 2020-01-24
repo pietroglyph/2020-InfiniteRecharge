@@ -108,6 +108,7 @@ Temporary Items
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/spartronics-formatter.xml
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -153,6 +154,7 @@ gradle-app.setting
 # # VS Code Specific Java Settings
 .classpath
 .project
+.settings/
 bin/
 imgui.ini
 
